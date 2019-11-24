@@ -25,9 +25,9 @@ def arm_and_takeoff(aTargetAltitude):
 
     print("Basic pre-arm checks")
     # Don't try to arm until autopilot is ready
-    while not vehicle.is_armable:
-        print(" Waiting for vehicle to initialise...")
-        time.sleep(1)
+    #while not vehicle.is_armable:
+    #    print(" Waiting for vehicle to initialise...")
+    #    time.sleep(1)
 
     print("Arming motors")
     # Copter should arm in GUIDED mode
@@ -56,8 +56,8 @@ def arm_and_takeoff(aTargetAltitude):
 
 arm_and_takeoff(5)
 
-print("Set default/target airspeed to 3")
-vehicle.airspeed = 3
+print("Set default/target airspeed to 0.5")
+vehicle.airspeed = 0.5
 
 bd_addr = "00:21:13:03:80:B4"
 port = 1
@@ -66,9 +66,11 @@ sock.connect((bd_addr,port))
 while 1:
     if vehicle.mode.name != "GUIDED":
         continue
+    altitude = 5
     data = sock.recv(1024)
+    data = string(data)
     print("Going to ") 
-    point1 = LocationGlobalRelative(data)
+    point1 = LocationGlobalRelative(data, altitude)
     vehicle.simple_goto(point1)
     time.sleep(1)
 sock.close()
