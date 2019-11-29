@@ -7,7 +7,7 @@ sock.connect((bd_addr,port))
 print ('waiting')
 while 1:
     data = sock.recv(1024)
-    data = string(data)
+    data = str(data)
     print (data)    
     time.sleep(1)
 sock.close()
