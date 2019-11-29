@@ -7,6 +7,8 @@ sock.connect((bd_addr,port))
 print ('waiting')
 while 1:
     data = sock.recv(1024)
+    if len(data) == 0:
+        break
     data = str(data)
     print (data)    
     time.sleep(0.5)
