@@ -11,5 +11,5 @@ while 1:
         break
     data = str(data)
     print (data)    
-    time.sleep(0.5)
+    time.sleep(1)
 sock.close()
