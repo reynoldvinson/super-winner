@@ -68,7 +68,7 @@ while 1:
         continue
     altitude = 5
     data = sock.recv(1024)
-    data = string(data)
+    data = str(data)
     print("Going to ") 
     point1 = LocationGlobalRelative(data, altitude)
     vehicle.simple_goto(point1)
