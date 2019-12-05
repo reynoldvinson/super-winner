@@ -8,8 +8,6 @@ print ('waiting')
 while 1:
     data = sock.recv(1024)
     data = data.decode()
-    if not data:
-        break
     print (data)    
     time.sleep(1)
 sock.close()
