@@ -68,11 +68,11 @@ while 1:
         continue
     altitude = 5
     data = sock.recv(1024)
-    data = str(data)
+    data = data.decode()
     print("Going to ") 
     point1 = LocationGlobalRelative(data, altitude)
     vehicle.simple_goto(point1)
-    time.sleep(1)
+    time.sleep(0.01)
 sock.close()
 # sleep so we can see the change in map
 # time.sleep(30)
