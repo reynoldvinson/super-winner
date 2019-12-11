@@ -54,7 +54,7 @@ def arm_and_takeoff(aTargetAltitude):
         time.sleep(1)
 
 
-arm_and_takeoff(5)
+arm_and_takeoff(3)
 
 print("Set default/target airspeed to 0.5")
 vehicle.airspeed = 0.5
@@ -63,30 +63,21 @@ bd_addr = "00:21:13:03:80:B4"
 port = 1
 sock = BluetoothSocket (RFCOMM)
 sock.connect((bd_addr,port))
+data = sock.recv(1024)
+data = data.decode()
+time.sleep(60)
 while 1:
     if vehicle.mode.name != "GUIDED":
-        continue
+        break
+        #continue
     altitude = 5
-    data = sock.recv(1024)
-    data = data.decode()
+    #data = sock.recv(1024)
+    #data = data.decode()
     print("Going to ") 
     point1 = LocationGlobalRelative(data, altitude)
     vehicle.simple_goto(point1)
-    time.sleep(0.01)
+    time.sleep(1)
 sock.close()
-# sleep so we can see the change in map
-# time.sleep(30)
 
-# print("Going towards second point for 30 seconds (groundspeed set to 10 m/s) ...")
-# point2 = LocationGlobalRelative(-35.363244, 149.168801, 20)
-# vehicle.simple_goto(point2, groundspeed=10)
-
-# sleep so we can see the change in map
-# time.sleep(30)
-
-# print("Returning to Launch")
-# vehicle.mode = VehicleMode("RTL")
-
-# Close vehicle object before exiting script
 print("Close vehicle object")
 vehicle.close()
