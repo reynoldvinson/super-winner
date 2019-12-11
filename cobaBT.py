@@ -9,5 +9,5 @@ while 1:
     data = sock.recv(1024)
     data = data.decode()
     print (data)    
-    time.sleep(0.1)
+    time.sleep(0.12)
 sock.close()
