@@ -6,7 +6,7 @@ sock = BluetoothSocket (RFCOMM)
 sock.connect((bd_addr,port))
 #data = sock.recv(1024)
 #data = data.decode()
-time.sleep(60)
+time.sleep(1)
 #print ('waiting')
 while 1:
     data = sock.recv(1024)
