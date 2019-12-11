@@ -65,11 +65,10 @@ sock = BluetoothSocket (RFCOMM)
 sock.connect((bd_addr,port))
 #data = sock.recv(1024)
 #data = data.decode()
-#time.sleep(60)
+time.sleep(1)
 while 1:
     if vehicle.mode.name != "GUIDED":
-        break
-        #continue
+        continue
     altitude = 5
     data = sock.recv(1024)
     data = data.decode()
