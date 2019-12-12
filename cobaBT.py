@@ -11,7 +11,7 @@ time.sleep(1)
 while 1:
     data = sock.recv(1024)
     data = data.decode()
-    #data = float(data)
+    data = float(data)
     print (data)
     print (type(data))
     time.sleep(1)
