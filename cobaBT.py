@@ -11,8 +11,10 @@ time.sleep(1)
 while 1:
     data = sock.recv(1024)
     #data = data.decode(float)
-    #lati = data
-    print (data)
-    print (type(data))
+    latit = data[:9]
+    longi = data[10:]
+    print (latit)
+    print (longi)
+    print (type(latit))
     time.sleep(1)
 sock.close()
