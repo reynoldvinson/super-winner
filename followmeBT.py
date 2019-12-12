@@ -69,7 +69,7 @@ time.sleep(1)
 while 1:
     if vehicle.mode.name != "GUIDED":
         continue
-    altitude = 5
+    altitude = 3
     data = sock.recv(1024)
     data = data.decode()
     print("Going to ") 
