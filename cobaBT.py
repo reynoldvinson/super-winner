@@ -10,7 +10,7 @@ time.sleep(1)
 #print ('waiting')
 while 1:
     data = sock.recv(1024)
-    data = data.decode()
+    #data = data.decode()
     data = float(data)
     print (data)
     print (type(data))
