@@ -69,9 +69,14 @@ while 1:
         continue
     altitude = 3
     data = sock.recv(1024)
-    data = data.decode()
+    latit = data[:9]
+    longi = data[10:]
+    latit = float(latit)
+    #print (latit)
+    longi = float(longi)
+    #print (longi)
     print("Going to ") 
-    point1 = LocationGlobalRelative(data, altitude)
+    point1 = LocationGlobalRelative(latit, longi, altitude)
     vehicle.simple_goto(point1)
     time.sleep(1)
 sock.close()
