@@ -13,7 +13,9 @@ while 1:
     #data = data.decode(float)
     latit = data[:9]
     longi = data[10:]
+    latit = float(latit)
     print (latit)
+    longi = float(longi)
     print (longi)
     print (type(latit))
     time.sleep(1)
