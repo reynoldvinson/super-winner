@@ -1,1 +1,3 @@
-# Skripsi
+# Tugas Akhir
+
+Reynold Vinson Chen
