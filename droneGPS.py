@@ -16,8 +16,8 @@ while 1:
     print("Drone GPS : ")
     print(vehicle.gps_0)
     print(vehicle.location.global_relative_frame)
-    data = sock.recv(1024)
     
+    data = sock.recv(1024)
     latit = data[:9]
     longi = data[10:]
     latit = float(latit)
