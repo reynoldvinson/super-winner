@@ -52,7 +52,7 @@ def arm_and_takeoff(aTargetAltitude):
         time.sleep(1)
 
 
-arm_and_takeoff(3)
+arm_and_takeoff(5)
 
 print("Set default/target airspeed to 0.5")
 vehicle.airspeed = 0.5
@@ -65,13 +65,13 @@ time.sleep(1)
 while 1:
     if vehicle.mode.name != "GUIDED":
         continue
-    altitude = 3
+    altitude = 5
     data = sock.recv(1024)
     latitude = data[:9]
     longitude = data[10:]
     latitude = float(latitude)
     longitude = float(longitude)
-    print (latitude, longitude)
+    print (latitude, longitude, altitude)
     #print("Going to user") 
     #user = LocationGlobalRelative(latitude, longitude, altitude)
     #vehicle.simple_goto(user)
