@@ -52,10 +52,10 @@ def arm_and_takeoff(aTargetAltitude):
         time.sleep(1)
 
 
-arm_and_takeoff(3)
+arm_and_takeoff(6)
 
-print("Set default/target airspeed to 0.5")
-vehicle.airspeed = 0.5
+print("Set default/target airspeed to 1")
+vehicle.airspeed = 1
 
 bd_addr = "00:21:13:03:80:B4"
 port = 1
@@ -65,7 +65,7 @@ time.sleep(1)
 while 1:
     if vehicle.mode.name != "GUIDED":
         continue
-    altitude = 3
+    altitude = 6
     data = sock.recv(1024)
     latitude = data[:9]
     longitude = data[10:]
