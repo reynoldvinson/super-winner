@@ -71,7 +71,7 @@ while 1:
     longitude = data[10:]
     latitude = float(latitude)
     longitude = float(longitude)
-    print (latitude, longitude, aTargetAltitude)
+    print (latitude, longitude)
     #print("Going to user") 
     #user = LocationGlobalRelative(latitude, longitude, altitude)
     #vehicle.simple_goto(user)
