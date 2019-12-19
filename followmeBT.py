@@ -54,8 +54,8 @@ def arm_and_takeoff(aTargetAltitude):
 
 arm_and_takeoff(6)
 
-print("Set default/target airspeed to 1.5")
-vehicle.airspeed = 1.5
+print("Set default/target airspeed to 1")
+vehicle.airspeed = 1
 
 bd_addr = "00:21:13:03:80:B4"
 port = 1
@@ -75,7 +75,7 @@ while 1:
     #print (longitude)
     print("Going to user") 
     user = LocationGlobalRelative(latitude, longitude, altitude)
-    vehicle.simple_goto(user)
+    vehicle.simple_goto(user, groundspeed=2)
     time.sleep(1)
 sock.close()
 
