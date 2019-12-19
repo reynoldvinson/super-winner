@@ -54,8 +54,8 @@ def arm_and_takeoff(aTargetAltitude):
 
 arm_and_takeoff(6)
 
-print("Set default/target airspeed to 1")
-vehicle.airspeed = 1
+print("Set default/target airspeed to 1.5")
+vehicle.airspeed = 1.5
 
 bd_addr = "00:21:13:03:80:B4"
 port = 1
