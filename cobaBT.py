@@ -17,5 +17,5 @@ while 1:
     print (latit)
     longi = float(longi)
     print (longi)
-    time.sleep(0.1)
+    time.sleep(1)
 sock.close()
