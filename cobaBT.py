@@ -14,8 +14,9 @@ while 1:
     latit = data[:9]
     longi = data[10:]
     latit = float(latit)
+    latit = latit*-1
     print (latit)
     longi = float(longi)
     print (longi)
-    time.sleep(1)
+    time.sleep(0.1)
 sock.close()
