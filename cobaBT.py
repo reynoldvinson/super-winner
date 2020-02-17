@@ -19,5 +19,5 @@ while 1:
     #print (latit)
     #longi = float(longi)
     #print (longi)
-    time.sleep(0.5)
+    time.sleep(0.1)
 sock.close()
