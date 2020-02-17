@@ -10,13 +10,14 @@ time.sleep(1)
 #print ('waiting')
 while 1:
     data = sock.recv(1024)
+    print (data)
     #data = data.decode(float)
-    latit = data[:9]
-    longi = data[10:]
-    latit = float(latit)
-    latit = latit*-1
-    print (latit)
-    longi = float(longi)
-    print (longi)
+    #latit = data[:9]
+    #longi = data[10:]
+    #latit = float(latit)
+    #latit = latit*-1
+    #print (latit)
+    #longi = float(longi)
+    #print (longi)
     time.sleep(1)
 sock.close()
