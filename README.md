@@ -1,3 +1,3 @@
-# Tugas Akhir
+# TA
 
 Reynold Vinson Chen
